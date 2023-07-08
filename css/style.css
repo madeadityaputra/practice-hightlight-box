@@ -26,7 +26,6 @@ h1 {
 .gallery li {
   width: 120px;
   height: 120px;
-  /*overflow: hidden; /*! agar menajdi bulat */
   border: 5px solid yellow;
   float: left; /*! koataknya akan runtuh */
   margin: 10px;
@@ -167,5 +166,101 @@ h1 {
   100% {
     opacity: 1;
     margin-top: 0;
+  }
+}
+
+/*responsive*/
+/* 500 px */
+@media screen and (max-width: 500px) {
+  .gallery li {
+    float: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+  }
+
+  .overlay img {
+    max-width: 75%;
+  }
+
+  .prev {
+    left: 140px;
+    top: 20%;
+  }
+
+  .next {
+    right: 5px;
+    top: 20%;
+  }
+
+  .overlay:target .next,
+  .overlay:target .prev {
+    animation: forNav 0.1s 1s forwards;
+  }
+}
+
+/* 1000 px */
+@media screen and (min-width: 500px) {
+  .gallery li {
+    margin: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .container {
+    display: flex;
+    max-width: 70%;
+    justify-content: space-between;
+  }
+  .overlay img {
+    max-width: 70%;
+  }
+
+  .prev {
+    left: 150px;
+    top: 30%;
+  }
+
+  .next {
+    right: 5px;
+    top: 30%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    width: 600px;
+    background-color: lightgreen;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+
+  .gallery li {
+    width: 120px;
+    height: 120px;
+    border: 5px solid yellow;
+    float: left; /*! koataknya akan runtuh */
+    margin: 10px;
+    position: relative;
+  }
+
+  .overlay img {
+    max-width: 100%;
+  }
+
+  .next {
+    right: 250px;
+    top: 40%;
+  }
+
+  .prev {
+    left: 400px;
+    top: 40%;
   }
 }
